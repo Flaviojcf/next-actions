@@ -29,11 +29,13 @@ export function AuthForm() {
   const {
     handleSubmit,
     register,
+    reset,
     formState: { errors },
   } = newEmailUserFormData
 
   function handleSendEmailUser(data: NewEmailUserFormData) {
     console.log(data)
+    reset()
   }
 
   return (
@@ -53,7 +55,7 @@ export function AuthForm() {
             <div className="space-y-2">
               <Label htmlFor="email">Email</Label>
               <Input
-                placeholder="m@example.com"
+                placeholder="teste@example.com"
                 type="email"
                 {...register('email')}
               />
