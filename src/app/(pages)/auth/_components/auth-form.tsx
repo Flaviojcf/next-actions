@@ -16,6 +16,9 @@ import { Input } from '@/components/ui/input'
 import { Button } from '@/components/ui/button'
 import { signIn } from 'next-auth/react'
 import { toast } from '@/components/ui/use-toast'
+import { useState } from 'react'
+import clsx from 'clsx'
+import { twMerge } from 'tailwind-merge'
 
 const FormValidationSchema = zod.object({
   email: zod.string().email({ message: 'Email is required' }),
@@ -24,6 +27,7 @@ const FormValidationSchema = zod.object({
 type NewEmailUserFormData = zod.infer<typeof FormValidationSchema>
 
 export function AuthForm() {
+  const [isLoading, setIsLoading] = useState(false)
   const newEmailUserFormData = useForm<NewEmailUserFormData>({
     resolver: zodResolver(FormValidationSchema),
   })
@@ -37,6 +41,7 @@ export function AuthForm() {
 
   async function handleSendEmailUser(data: NewEmailUserFormData) {
     try {
+      setIsLoading(true)
       await signIn('email', { email: data.email, redirect: false })
       toast({
         title: 'Magic Link Sent',
@@ -49,6 +54,8 @@ export function AuthForm() {
         description: 'An error occurred. Please try again.',
         variant: 'destructive',
       })
+    } finally {
+      setIsLoading(false)
     }
   }
 
@@ -77,7 +84,16 @@ export function AuthForm() {
                 <ErrorMessage errors={errors} name="email" />
               </div>
             </div>
-            <Button className="w-full">Send magic link</Button>
+            <Button
+              className={clsx(
+                'w-full',
+                twMerge(isLoading && 'cursor-not-allowed bg-gray-400'),
+                'rounded px-4 py-2 font-bold text-white',
+              )}
+              disabled={isLoading}
+            >
+              {isLoading ? 'Sending...' : 'Send magic link'}
+            </Button>
           </form>
         </CardContent>
       </Card>
