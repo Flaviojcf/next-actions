@@ -75,11 +75,7 @@ export function AuthForm() {
           >
             <div className="space-y-2">
               <Label htmlFor="email">Email</Label>
-              <Input
-                placeholder="teste@example.com"
-                type="email"
-                {...register('email')}
-              />
+              <Input placeholder="teste@example.com" {...register('email')} />
               <div className="text-sm text-red-400">
                 <ErrorMessage errors={errors} name="email" />
               </div>
