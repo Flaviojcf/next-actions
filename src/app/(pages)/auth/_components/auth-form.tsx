@@ -18,7 +18,7 @@ import { signIn } from 'next-auth/react'
 import { toast } from '@/components/ui/use-toast'
 
 const FormValidationSchema = zod.object({
-  email: zod.string().email({ message: 'Campo obrigatório' }),
+  email: zod.string().email({ message: 'Email is required' }),
 })
 
 type NewEmailUserFormData = zod.infer<typeof FormValidationSchema>
@@ -47,6 +47,7 @@ export function AuthForm() {
       toast({
         title: 'Error',
         description: 'An error occurred. Please try again.',
+        variant: 'destructive',
       })
     }
   }
