@@ -14,6 +14,8 @@ import {
 import { Label } from '@/components/ui/label'
 import { Input } from '@/components/ui/input'
 import { Button } from '@/components/ui/button'
+import { signIn } from 'next-auth/react'
+import { toast } from '@/components/ui/use-toast'
 
 const FormValidationSchema = zod.object({
   email: zod.string().email({ message: 'Campo obrigatório' }),
@@ -33,9 +35,20 @@ export function AuthForm() {
     formState: { errors },
   } = newEmailUserFormData
 
-  function handleSendEmailUser(data: NewEmailUserFormData) {
-    console.log(data)
-    reset()
+  async function handleSendEmailUser(data: NewEmailUserFormData) {
+    try {
+      await signIn('email', { email: data.email, redirect: false })
+      toast({
+        title: 'Magic Link Sent',
+        description: 'Check your email for the magic link to login',
+      })
+      reset()
+    } catch (error) {
+      toast({
+        title: 'Error',
+        description: 'An error occurred. Please try again.',
+      })
+    }
   }
 
   return (
