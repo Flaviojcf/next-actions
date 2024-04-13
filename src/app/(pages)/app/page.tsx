@@ -1,10 +1,19 @@
-import { UserInfo } from './_components/user-info'
-import { auth } from '@/services/auth'
+import {
+  DashBoardPage,
+  DashBoardPageHeader,
+  DashBoardPageHeaderTitle,
+  DashBoardPageMain,
+} from '@/components/dashboard/page'
+
 export default async function Page() {
-  const session = await auth()
   return (
-    <main className="flex h-screen items-center justify-center">
-      <UserInfo user={session?.user} />
-    </main>
+    <DashBoardPage>
+      <DashBoardPageHeader>
+        <DashBoardPageHeaderTitle>Tarefas</DashBoardPageHeaderTitle>
+      </DashBoardPageHeader>
+      <DashBoardPageMain>
+        <h1>Tarefas</h1>
+      </DashBoardPageMain>
+    </DashBoardPage>
   )
 }
