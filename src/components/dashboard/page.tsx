@@ -17,7 +17,12 @@ export function DashBoardPageHeader({
   children,
 }: GenericDashBoardPageProps) {
   return (
-    <header className={cn(['border-b border-border px-6 py-3', className])}>
+    <header
+      className={cn([
+        'flex items-center justify-between border-b border-border px-6 py-3',
+        className,
+      ])}
+    >
       {children}
     </header>
   )
