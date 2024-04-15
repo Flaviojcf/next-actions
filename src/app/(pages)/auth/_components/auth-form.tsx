@@ -44,14 +44,14 @@ export function AuthForm() {
       setIsLoading(true)
       await signIn('nodemailer', { email: data.email, redirect: false })
       toast({
-        title: 'Magic Link Sent',
-        description: 'Check your email for the magic link to login',
+        title: 'Link para cadastro enviado',
+        description: 'Confira seu email para fazer login',
       })
       reset()
     } catch (error) {
       toast({
         title: 'Error',
-        description: 'An error occurred. Please try again.',
+        description: 'Erro interno. Tente novamente',
         variant: 'destructive',
       })
     } finally {
@@ -65,7 +65,7 @@ export function AuthForm() {
         <CardHeader className="space-y-1">
           <CardTitle className="text-2xl font-bold">Login</CardTitle>
           <CardDescription>
-            Enter your email below to login to your account
+            Digite seu email abaixo para criar sua conta
           </CardDescription>
         </CardHeader>
         <CardContent>
@@ -88,7 +88,7 @@ export function AuthForm() {
               )}
               disabled={isLoading}
             >
-              {isLoading ? 'Sending...' : 'Send magic link'}
+              {isLoading ? 'Enviando...' : 'Enviar link para cadastro'}
             </Button>
           </form>
         </CardContent>

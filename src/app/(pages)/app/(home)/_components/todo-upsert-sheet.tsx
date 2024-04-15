@@ -25,6 +25,9 @@ import {
 } from '@/components/ui/form'
 import { Todo } from '../types'
 import { upsertTodoSchema } from '../schema'
+import { upsertTodo } from './actions'
+import { useRouter } from 'next/navigation'
+import { toast } from '@/components/ui/use-toast'
 
 type TodoUpsertSheetProps = {
   children?: React.ReactNode
@@ -33,6 +36,7 @@ type TodoUpsertSheetProps = {
 
 export function TodoUpsertSheet({ children }: TodoUpsertSheetProps) {
   type NewTodoFormData = zod.infer<typeof upsertTodoSchema>
+  const router = useRouter()
 
   const newTodoFormData = useForm<NewTodoFormData>({
     resolver: zodResolver(upsertTodoSchema),
@@ -43,9 +47,15 @@ export function TodoUpsertSheet({ children }: TodoUpsertSheetProps) {
   const ref = useRef<HTMLDivElement>()
 
   async function handleSendTodo(data: NewTodoFormData) {
-    if (!data.title) return
-    console.log(data)
+    await upsertTodo(data)
     reset()
+    router.refresh()
+    ref.current?.click()
+
+    toast({
+      title: 'Sucesso',
+      description: 'Sua tarefa foi criada com sucesso',
+    })
   }
 
   return (
@@ -61,9 +71,9 @@ export function TodoUpsertSheet({ children }: TodoUpsertSheetProps) {
             className=" space-y-8"
           >
             <SheetHeader>
-              <SheetTitle>Upsert Todo</SheetTitle>
+              <SheetTitle>Crie uma nova tarefa</SheetTitle>
               <SheetDescription>
-                Add or edit your todo item here. Click save when you re done.
+                Adicione uma nova tarefa aqui. Depois clique para salvar.
               </SheetDescription>
             </SheetHeader>
 
@@ -71,15 +81,15 @@ export function TodoUpsertSheet({ children }: TodoUpsertSheetProps) {
               name="title"
               render={() => (
                 <FormItem>
-                  <FormLabel>Title</FormLabel>
+                  <FormLabel>Título da tarefa</FormLabel>
                   <FormControl>
                     <Input
-                      placeholder="Enter your todo title"
+                      placeholder="Digite o título da tarefa"
                       {...register('title')}
                     />
                   </FormControl>
                   <FormDescription>
-                    This will be the publicly displayed name for the task.
+                    Este será o título da tarefa a ser exibida
                   </FormDescription>
                   <FormMessage />
                 </FormItem>
@@ -88,7 +98,7 @@ export function TodoUpsertSheet({ children }: TodoUpsertSheetProps) {
 
             <SheetFooter className="mt-auto">
               <Button type="submit" form="upsertTodo">
-                Save changes
+                Salvar
               </Button>
             </SheetFooter>
           </form>

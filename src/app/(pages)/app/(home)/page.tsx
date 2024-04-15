@@ -16,14 +16,14 @@ export default async function Page() {
   console.log(todos)
   return (
     <DashBoardPage>
-      <DashBoardPageHeader>
+      <DashBoardPageHeader className="max-h-[49px]">
         <DashBoardPageHeaderTitle>Tarefas</DashBoardPageHeaderTitle>
 
         <DashBoardPageHeaderNav>
           <TodoUpsertSheet>
             <Button variant="outline" size="sm">
               <PlusIcon className="mr-3 h-4 w-4" />
-              Add Todo
+              Criar tarefa
             </Button>
           </TodoUpsertSheet>
         </DashBoardPageHeaderNav>
