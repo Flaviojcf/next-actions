@@ -18,6 +18,7 @@ import {
 } from '@radix-ui/react-icons'
 import { Session } from 'next-auth'
 import { signOut } from 'next-auth/react'
+import Link from 'next/link'
 
 type UserDropdownProps = {
   user: Session['user']
@@ -60,8 +61,10 @@ export function UserDropdown({ user }: UserDropdownProps) {
         <DropdownMenuSeparator />
         <DropdownMenuGroup>
           <DropdownMenuItem>
-            <MixerVerticalIcon className="mr-3 h-3 w-3" />
-            Configuraçoes
+            <Link href="/app/settings" className="flex items-center">
+              <MixerVerticalIcon className="mr-3 h-3 w-3" />
+              Configurações
+            </Link>
           </DropdownMenuItem>
           <DropdownMenuItem>
             <RocketIcon className="mr-3 h-3 w-3" />
