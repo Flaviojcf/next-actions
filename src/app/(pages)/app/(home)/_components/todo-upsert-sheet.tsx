@@ -42,7 +42,7 @@ export function TodoUpsertSheet({ children }: TodoUpsertSheetProps) {
     resolver: zodResolver(upsertTodoSchema),
   })
 
-  const { handleSubmit, register, reset } = newTodoFormData
+  const { handleSubmit, register, reset, watch } = newTodoFormData
 
   const ref = useRef<HTMLDivElement>()
 
@@ -97,7 +97,11 @@ export function TodoUpsertSheet({ children }: TodoUpsertSheetProps) {
             />
 
             <SheetFooter className="mt-auto">
-              <Button type="submit" form="upsertTodo">
+              <Button
+                type="submit"
+                form="upsertTodo"
+                disabled={!watch('title')}
+              >
                 Salvar
               </Button>
             </SheetFooter>
