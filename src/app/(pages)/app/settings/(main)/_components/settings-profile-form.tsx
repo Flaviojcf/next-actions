@@ -108,7 +108,7 @@ export function SettingsProfileForm({
                   <FormLabel>Email</FormLabel>
                   <FormControl>
                     <Input
-                      className="cursor-not-allowed read-only:bg-gray-100"
+                      className="cursor-not-allowed text-black read-only:bg-gray-200"
                       {...register('email')}
                       readOnly
                     />
