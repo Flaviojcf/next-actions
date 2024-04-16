@@ -13,7 +13,6 @@ import { getUserTodos } from './_components/actions'
 
 export default async function Page() {
   const todos = await getUserTodos()
-  console.log(todos)
   return (
     <DashBoardPage>
       <DashBoardPageHeader className="max-h-[49px]">
