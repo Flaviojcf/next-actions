@@ -84,7 +84,7 @@ export function AuthForm() {
               className={clsx(
                 'w-full',
                 twMerge(isLoading && 'cursor-not-allowed bg-gray-400'),
-                'rounded px-4 py-2 font-bold text-white',
+                'rounded px-4 py-2 font-bold',
               )}
               disabled={isLoading}
             >
