@@ -1,36 +1,110 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+<a name="readme-top"></a>
+<h1 align="center">MicroSaas NextActions</h1>
 
-## Getting Started
+[![Contributors][contributors-shield]][contributors-url]
+[![Forks][forks-shield]][forks-url]
+[![Stargazers][stars-shield]][stars-url]
+[![Issues][issues-shield]][issues-url]
+[![LinkedIn][linkedin-shield]][linkedin-url]
 
-First, run the development server:
+<br />
+<div align="center">
+  <a href="https://github.com/Flaviojcf/next-actions">
+    <img src="/micro-saas1.png" alt="Logo">
+  </a>
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+  <p align="center">
+    This project is an audio equipment e-commerce. It includes features such as product catalog, shopping cart, and payment page.
+    <br />
+    <a href="https://github.com/flaviojcf/audiophile-e-commerce"><strong>Explore the code »</strong></a>
+    <br />
+  </p>
+</div>
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+<details>
+  <summary>Table of Contents</summary>
+  <ol>
+    <li>
+      <a href="#about-the-project">About The Project</a>
+      <ul>
+        <li><a href="#built-with">Built With</a></li>
+      </ul>
+    </li>
+    <li>
+      <ul>
+        <li><a href="#prerequisites">Pre-requisites</a></li>
+        <li><a href="#installation">Installation</a></li>
+      </ul>
+    </li>
+    <li><a href="#contact">Contact</a></li>
+  </ol>
+</details>
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+## Screenshots
 
-## Learn More
+<div align="center">
+    <img src="/micro-saas1.png"  >
+    <img src="/micro-saas2.png"  >
+    <img src="/micro-saas3.png"  >
+    <img src="/micro-saas4.png"  >
+</div>
 
-To learn more about Next.js, take a look at the following resources:
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+### Pre-requisites
 
-## Deploy on Vercel
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+- npm
+  ```sh
+  npm install npm@latest -g
+  ```
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+### Installation
+
+1. Clone the repo
+   ```sh
+   git clone https://github.com/Flaviojcf/next-actions.git
+   ```
+2. Install NPM packages
+   ```sh
+   npm install
+   ```
+
+
+
+
+
+## Contact
+
+[@flavio_jCosta](mailto:flaviojcostafilho@gmail.com) - flaviojcostafilho@gmail.com
+
+Project Link: [https://github.com/Flaviojcf/next-actions](https://github.com/Flaviojcf/next-actions)
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+
+
+
+[contributors-shield]: https://img.shields.io/github/contributors/flaviojcf/next-actions.svg?style=for-the-badge
+[contributors-url]: https://github.com/flaviojcf/next-actions/graphs/contributors
+[forks-shield]: https://img.shields.io/github/forks/flaviojcf/audiophile-e-commerce.svg?style=for-the-badge
+[forks-url]: https://github.com/flaviojcf/next-actions/network/members
+[stars-shield]: https://img.shields.io/github/stars/flaviojcf/next-actions.svg?style=for-the-badge
+[stars-url]: https://github.com/flaviojcf/next-actions/stargazers
+[issues-shield]: https://img.shields.io/github/issues/flaviojcf/next-actions.svg?style=for-the-badge
+[issues-url]: https://github.com/flaviojcf/next-actions/issues
+[linkedin-shield]: https://img.shields.io/badge/-LinkedIn-black.svg?style=for-the-badge&logo=linkedin&colorB=555
+[linkedin-url]: https://www.linkedin.com/in/flávio-jcosta
+[react.js]: https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB
+[react-url]: https://reactjs.org/
+[radix.react]: https://img.shields.io/badge/radix-ui20232A?style=for-the-badge&logo=radix-ui&logoColor=61DAFB
+[radix-url]: https://www.radix-ui.com/
+[reactRouter.react]:https://img.shields.io/badge/React-Router-Dom20232A?style=for-the-badge&logo=react-router-dom&logoColor=61DAFB
+[reactRouter-url]: https://reactrouter.com/en/main
+[TailwindCss.react]:https://img.shields.io/badge/Tailwind-css20232A?style=for-the-badge&logo=TailwindCss&logoColor=61DAFB
+[TailwindCss-url]: https://tailwindcss.com/
+[Phosphor.react]:https://img.shields.io/badge/Phosphor-react20232A?style=for-the-badge&logo=phosphor-react&logoColor=61DAFB
+[Phosphor-url]: https://phosphoricons.com/
+[Typescript.react]:https://img.shields.io/badge/types-Typescript-brightgreen
+[Typescript-url]: https://phosphoricons.com/
