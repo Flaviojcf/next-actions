@@ -15,7 +15,7 @@
 
 
   <p align="center">
-    This project is an audio equipment e-commerce. It includes features such as product catalog, shopping cart, and payment page.
+    Microsaas para controle de atividades por usuário cadastrado.
     <br />
     <a href="https://github.com/flaviojcf/audiophile-e-commerce"><strong>Explore the code »</strong></a>
     <br />
